@@ -1,15 +1,3 @@
-"""Main orchestration script to sync unread Gmail messages into Google Sheets.
-
-Steps:
-1. Load local state (processed IDs) from state.json (default).
-2. Authorize Gmail and Sheets via OAuth InstalledAppFlow (tokens stored at TOKEN_PATH).
-3. Fetch unread INBOX messages, filter by SUBJECT_FILTER if set.
-4. Parse sender, subject, date, and body to rows.
-5. Append rows to the target sheet and mark processed messages as read.
-6. Update state with processed message IDs and last_run timestamp.
-
-Note: Do NOT commit credentials, token, or state files.
-"""
 from __future__ import annotations
 
 import json
